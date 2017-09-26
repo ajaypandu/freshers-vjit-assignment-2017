@@ -18,3 +18,8 @@ The waiter gets to know the information of the customers who are waiting outside
 THIS WAS MY INITIAL THOUGHT AND IS SUBJECTED TO FURTHER CHANGES.
 
 I used JFrame many times as there is a need of many tabs/screens to appear.labels,Buttons,Checkboxes and textfields are prefferred primarily.Absolute layout is taken for the ease of putting the buttons,checkboxes etc anywhere in the screen.
+
+
+PATH TO RUN THE CODE:
+Navigate to HelloWorld Folder and then execute the below command in CMD.
+java -cp target/HelloWorld-1.0-SNAPSHOT.jar com.Project.choo
