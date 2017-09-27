@@ -41,8 +41,8 @@ public class IndianTable extends JFrame {
 	 * Create the frame.
 	 */
 	public IndianTable() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 500, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -55,7 +55,7 @@ public class IndianTable extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				
-				 InOrder nw =new InOrder();                                              //
+				 InOrder nw =new InOrder("Raj","Konda","Mitra");                                              //
 				 nw.NewScreen();                                                         //
 							}
 		});
@@ -66,7 +66,7 @@ public class IndianTable extends JFrame {
 		btnTable_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				 InOrder nw =new InOrder();                                           //
+				 InOrder nw =new InOrder("Ravi","Govind","Bhujam");                                           //
 				 nw.NewScreen();                                                     //
 			}
 		});
@@ -77,39 +77,44 @@ public class IndianTable extends JFrame {
 		btnTable_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				 InOrder nw =new InOrder();                                           //
+				 InOrder nw =new InOrder("Kailesh","Rishi","Padma");                                           //
 				 nw.NewScreen();                                                     //
 			}
 		});
-		btnTable_2.setBounds(287, 54, 89, 23);
+		btnTable_2.setBounds(368, 54, 89, 23);
 		contentPane.add(btnTable_2);
 		
 		JButton btnTable_3 = new JButton("Table4");
 		btnTable_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				 InOrder nw =new InOrder();                                         //
+				 InOrder nw =new InOrder("Megha","Dinesh","Mohan");                                         //
 				 nw.NewScreen();                                                    //
 			}
 		});
-		btnTable_3.setBounds(287, 227, 89, 23);
+		btnTable_3.setBounds(368, 227, 89, 23);
 		contentPane.add(btnTable_3);
 		
 		JButton btnNewButton = new JButton("Table5");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				 InOrder nw =new InOrder();                                         //   
+				 InOrder nw =new InOrder("Gnani","Praveen","Harish");                                         //   
 				 nw.NewScreen();	                                                //
 			}
 		});
-		btnNewButton.setBounds(126, 120, 157, 67);
+		btnNewButton.setBounds(166, 114, 157, 67);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblChooseTheTable = new JLabel("Choose the table");
+		JLabel lblChooseTheTable = new JLabel("Choose a table");
 		lblChooseTheTable.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblChooseTheTable.setBounds(151, 11, 102, 14);
+		lblChooseTheTable.setBounds(10, 12, 102, 14);
 		contentPane.add(lblChooseTheTable);
+		
+		JLabel lblExecutiveChef = new JLabel("Executive Chef : Kumar");
+		lblExecutiveChef.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblExecutiveChef.setBounds(307, 11, 167, 14);
+		contentPane.add(lblExecutiveChef);
 	}
 
 }

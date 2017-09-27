@@ -10,6 +10,8 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class MalaysianTable extends JFrame {
 
@@ -35,7 +37,7 @@ public class MalaysianTable extends JFrame {
 	 * Create the frame.
 	 */
 	public MalaysianTable() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -45,7 +47,7 @@ public class MalaysianTable extends JFrame {
 		JButton btnNewButton = new JButton("Table 16");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MaOrder nw3 =new MaOrder();                                         //
+				MaOrder nw3 =new MaOrder("ajay","Server1","Chef1");                                         //
 				 nw3.NewScreen3();                                                    //
 			
 				
@@ -59,7 +61,7 @@ public class MalaysianTable extends JFrame {
 		JButton btnNewButton_1 = new JButton("Table 17");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MaOrder nw3 =new MaOrder();                                         //
+				MaOrder nw3 =new MaOrder("Manager1","Server1","Chef1");                                         //
 				 nw3.NewScreen3();                                                    //
 				
 			}
@@ -73,7 +75,7 @@ public class MalaysianTable extends JFrame {
 		JButton btnNewButton_2 = new JButton("Table 19");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MaOrder nw3 =new MaOrder();                                         //
+				MaOrder nw3 =new MaOrder("Manager1","Server1","Chef1");                                         //
 				 nw3.NewScreen3();                                                    //
 			}
 		});
@@ -83,7 +85,7 @@ public class MalaysianTable extends JFrame {
 		JButton btnNewButton_3 = new JButton("Table 20");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MaOrder nw3 =new MaOrder();                                         //
+				MaOrder nw3 =new MaOrder("Manager1","Server1","Chef1");                                         //
 				 nw3.NewScreen3();                                                    //
 			}
 		});
@@ -93,12 +95,22 @@ public class MalaysianTable extends JFrame {
 		JButton btnNewButton_4 = new JButton("Table 18");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MaOrder nw3 =new MaOrder();                                         //
+				MaOrder nw3 =new MaOrder("Manager1","Server1","Chef1");                                         //
 				 nw3.NewScreen3();                                                    //
 			}
 		});
 		btnNewButton_4.setBounds(162, 108, 89, 23);
 		contentPane.add(btnNewButton_4);
+		
+		JLabel lblNewLabel = new JLabel("Choose a table");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel.setBounds(10, 11, 112, 14);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Executive Chef : Mon");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_1.setBounds(276, 11, 148, 14);
+		contentPane.add(lblNewLabel_1);
 	}
 
 }

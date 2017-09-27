@@ -4,13 +4,17 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
+
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JButton;
 
 public class ItOrder {
@@ -27,16 +31,34 @@ public class ItOrder {
 	private JTextField txtBombolone;
 	private JTextField txtAmaretti;
 	private JTextField txtPanettone;
-	private JTextField textField_11;
+	private JTextField txtCost;
+	public String Manager;
+	public  String Server;
+	public  String LineCook;
+	
+	
+	public double  CapreseSalad=50;                               //
+	public double BagnaCauda=50;
+	public double  BasilSalad=60;                               //
+	public double BeetrootRisotto=70;
+	public double  ChickenScallopini=55;                               //
+	public double PorkMarsala=65;
+	public double  Brodetto=80;                               //
+	public double BraisedChuckRoast=100;
+	public double  Bombolone=10;                               //
+	public double Amaretti=20;
+	public double  Panettone=100;                               //
+	
+	
 
 	/**
 	 * Launch the application.
 	 */
-	public static void NewScreen2() {
+	public  void NewScreen2() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ItOrder window = new ItOrder();
+					ItOrder window = new ItOrder(Manager, Server, LineCook);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,7 +70,10 @@ public class ItOrder {
 	/**
 	 * Create the application.
 	 */
-	public ItOrder() {
+	public ItOrder(String a1,String a2,String a3) {
+		Manager=a1;
+		Server=a2;
+		LineCook=a3;
 		initialize();
 	}
 
@@ -60,22 +85,22 @@ public class ItOrder {
 		frame.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowActivated(WindowEvent e) {
-				txtCapreseSalad.setEnabled(false);
-				txtBagnaCauda.setEnabled(false);
-				txtBasilSalad.setEnabled(false);                                     //
-				txtBeetrootRisotto.setEnabled(false);
-				txtChickenScallopini.setEnabled(false);
-				txtPorkMarsala.setEnabled(false);
-				txtBrodetto.setEnabled(false);
-				txtBraisedChuckRoast.setEnabled(false);
-				txtBombolone.setEnabled(false);
-				txtAmaretti.setEnabled(false);
-				txtPanettone.setEnabled(false);
+				txtCapreseSalad.setEnabled(false);txtCapreseSalad.setText("0");
+				txtBagnaCauda.setEnabled(false);txtBagnaCauda.setText("0");
+				txtBasilSalad.setEnabled(false);txtBasilSalad.setText("0");        //
+				txtBeetrootRisotto.setEnabled(false);txtBeetrootRisotto.setText("0");
+				txtChickenScallopini.setEnabled(false);txtChickenScallopini.setText("0");
+				txtPorkMarsala.setEnabled(false);txtPorkMarsala.setText("0");
+				txtBrodetto.setEnabled(false);txtBrodetto.setText("0");
+				txtBraisedChuckRoast.setEnabled(false);txtBraisedChuckRoast.setText("0");
+				txtBombolone.setEnabled(false);txtBombolone.setText("0");
+				txtAmaretti.setEnabled(false);txtAmaretti.setText("0");
+				txtPanettone.setEnabled(false);txtPanettone.setText("0");
 				
 			}
 		});
 		frame.setBounds(0, 0, 1000, 450);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("ITALIAN MENU");
@@ -366,14 +391,10 @@ public class ItOrder {
 		frame.getContentPane().add(txtPanettone);
 		txtPanettone.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("Cost =");
-		lblNewLabel_4.setBounds(836, 386, 46, 14);
-		frame.getContentPane().add(lblNewLabel_4);
-		
-		textField_11 = new JTextField();
-		textField_11.setBounds(888, 383, 86, 20);
-		frame.getContentPane().add(textField_11);
-		textField_11.setColumns(10);
+		txtCost = new JTextField();
+		txtCost.setBounds(885, 383, 89, 20);
+		frame.getContentPane().add(txtCost);
+		txtCost.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Reset");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -408,6 +429,63 @@ public class ItOrder {
 		});
 		btnNewButton.setBounds(679, 382, 89, 23);
 		frame.getContentPane().add(btnNewButton);
+		
+		JLabel lblNewLabel_5 = new JLabel("Manager");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_5.setBounds(28, 41, 67, 14);
+		frame.getContentPane().add(lblNewLabel_5);
+		
+		JLabel lblManager = new JLabel("New label");
+		lblManager.setBounds(116, 41, 46, 14);
+		frame.getContentPane().add(lblManager);
+		lblManager.setText(Manager);
+		
+		JLabel lblNewLabel_6 = new JLabel("Server");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_6.setBounds(314, 41, 46, 14);
+		frame.getContentPane().add(lblNewLabel_6);
+		
+		JLabel lblServer = new JLabel("New label");
+		lblServer.setBounds(417, 41, 46, 14);
+		frame.getContentPane().add(lblServer);
+		lblServer.setText(Server);
+		
+		JLabel lblNewLabel_7 = new JLabel("LineCook");
+		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_7.setBounds(607, 41, 60, 14);
+		frame.getContentPane().add(lblNewLabel_7);
+		
+		JLabel lblLineCook = new JLabel("New label");
+		lblLineCook.setBounds(711, 41, 67, 14);
+		frame.getContentPane().add(lblLineCook);
+		lblLineCook.setText(LineCook);
+		
+		JButton btnNewButton_1 = new JButton("Cost");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double mCost=CapreseSalad*Double.parseDouble(txtCapreseSalad.getText());                     // 	
+				double frCost=BagnaCauda*Double.parseDouble(txtBagnaCauda.getText());
+				double sCost=BasilSalad*Double.parseDouble(txtBasilSalad.getText());                     // 	
+				double chCost=BeetrootRisotto*Double.parseDouble(txtBeetrootRisotto.getText());
+				double aCost=ChickenScallopini*Double.parseDouble(txtChickenScallopini.getText());                     // 	
+				double brCost=PorkMarsala*Double.parseDouble(txtPorkMarsala.getText());
+				double nCost=Brodetto*Double.parseDouble(txtBrodetto.getText());                     // 	
+				double birCost=BraisedChuckRoast*Double.parseDouble(txtBraisedChuckRoast.getText());
+				double rCost=Bombolone*Double.parseDouble(txtBombolone.getText());                     // 	
+				double narCost=Amaretti*Double.parseDouble(txtAmaretti.getText());
+				double pCost=Panettone*Double.parseDouble(txtPanettone.getText());                     // 	
+				
+				
+				double Total= mCost+frCost+ sCost+chCost+aCost+brCost+nCost+birCost+rCost+narCost+ pCost;
+				
+				String T= String.format("Rs %.2f", Total);
+				 	 
+				 
+				txtCost.setText(T);                                 
+			}
+		});
+		btnNewButton_1.setBounds(885, 352, 89, 23);
+		frame.getContentPane().add(btnNewButton_1);
 	}
 
 }

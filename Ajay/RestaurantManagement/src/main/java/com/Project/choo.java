@@ -107,11 +107,22 @@ public class choo extends JFrame {
 		lblWelcomeToThe.setBounds(10, 11, 514, 14);
 		getContentPane().add(lblWelcomeToThe);
 		
-		JLabel lblChooseYourCusine = new JLabel("Choose your Cuisine");
+		JLabel lblChooseYourCusine = new JLabel("Choose a Cuisine");
 		lblChooseYourCusine.setHorizontalAlignment(SwingConstants.CENTER);
 		lblChooseYourCusine.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblChooseYourCusine.setBounds(184, 36, 149, 34);
 		getContentPane().add(lblChooseYourCusine);
+		
+		JButton btnNewButton_4 = new JButton("MULTICUISINE");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MC Table1= new MC();
+				Table1.setVisible(true);
+				
+			}
+		});
+		btnNewButton_4.setBounds(198, 134, 124, 23);
+		getContentPane().add(btnNewButton_4);
 	}
 
 }

@@ -10,6 +10,8 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class ItalianTable extends JFrame {
 
@@ -35,7 +37,7 @@ public class ItalianTable extends JFrame {
 	 * Create the frame.
 	 */
 	public ItalianTable() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -45,7 +47,7 @@ public class ItalianTable extends JFrame {
 		JButton btnNewButton = new JButton("Table 11");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ItOrder nw2 =new ItOrder();                                         //
+				ItOrder nw2 =new ItOrder("Manager1","Server1","Chef1");                                         //
 				 nw2.NewScreen2();                                                    //
 			
 				
@@ -58,7 +60,7 @@ public class ItalianTable extends JFrame {
 		JButton btnNewButton_1 = new JButton("Table 13");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ItOrder nw2 =new ItOrder();                                         //
+				ItOrder nw2 =new ItOrder("Manager1","Server1","Chef1");                                         //
 				 nw2.NewScreen2();                                                    //
 			
 			}
@@ -69,7 +71,7 @@ public class ItalianTable extends JFrame {
 		JButton btnNewButton_2 = new JButton("Table 12");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ItOrder nw2 =new ItOrder();                                         //
+				ItOrder nw2 =new ItOrder("Manager1","Server1","Chef1");                                         //
 				 nw2.NewScreen2();                                                    //
 			
 			}
@@ -80,7 +82,7 @@ public class ItalianTable extends JFrame {
 		JButton btnNewButton_3 = new JButton("Table 14");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ItOrder nw2 =new ItOrder();                                         //
+				ItOrder nw2 =new ItOrder("Manager1","Server1","Chef1");                                         //
 				 nw2.NewScreen2();                                                    //
 			
 			}
@@ -91,13 +93,23 @@ public class ItalianTable extends JFrame {
 		JButton btnNewButton_4 = new JButton("Table 15");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ItOrder nw2 =new ItOrder();                                         //
+				ItOrder nw2 =new ItOrder("Manager1","Server1","Chef1");                                         //
 				 nw2.NewScreen2();                                                    //
 			
 			}
 		});
 		btnNewButton_4.setBounds(166, 182, 89, 23);
 		contentPane.add(btnNewButton_4);
+		
+		JLabel lblNewLabel = new JLabel("Choose a table");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel.setBounds(10, 11, 106, 14);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Executive Chef :Thomas");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_1.setBounds(258, 11, 166, 14);
+		contentPane.add(lblNewLabel_1);
 	}
 
 }

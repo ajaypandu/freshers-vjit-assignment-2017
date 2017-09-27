@@ -4,13 +4,17 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
+
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JButton;
 
 public class MaOrder {
@@ -25,16 +29,32 @@ public class MaOrder {
 	private JTextField txtChowFriedRice;
 	private JTextField txtAiskacang;
 	private JTextField txtGorengPisang;
-	private JTextField textField_9;
+	private JTextField txtCost;
+	public String Manager;
+	public  String Server;
+	public  String LineCook;
+	
+	public double  KerabuSalad=50;                               //
+	public double KaripapPusing=50;
+	public double  PrawnFritters=60;                               //
+	public double Satay=70;
+	public double  Acar=55;                               //
+	public double KampungFriedRice=65;
+	public double  ChowFriedRice=80;                               //
+	public double Aiskacang=100;
+	public double  GorengPisang=10;                               //
+	
+	
+	
 
 	/**
 	 * Launch the application.
 	 */
-	public static void NewScreen3() {
+	public  void NewScreen3() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MaOrder window = new MaOrder();
+					MaOrder window = new MaOrder(Manager, Server, LineCook);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,7 +66,10 @@ public class MaOrder {
 	/**
 	 * Create the application.
 	 */
-	public MaOrder() {
+	public MaOrder(String a1,String a2,String a3) {
+		Manager=a1;
+		Server=a2;
+		LineCook=a3;
 		initialize();
 	}
 
@@ -58,20 +81,20 @@ public class MaOrder {
 		frame.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowActivated(WindowEvent e) {
-				txtKerabuSalad.setEnabled(false);
-				txtKaripapPusing.setEnabled(false);
-				txtPrawnFritters.setEnabled(false);                                     //
-				txtSatay.setEnabled(false);
-				txtAcar.setEnabled(false);
-				txtKampungFriedRice.setEnabled(false);
-				txtChowFriedRice.setEnabled(false);
-				txtAiskacang.setEnabled(false);
-				txtGorengPisang.setEnabled(false);
+				txtKerabuSalad.setEnabled(false);txtKerabuSalad.setText("0");
+				txtKaripapPusing.setEnabled(false);txtKaripapPusing.setText("0");
+				txtPrawnFritters.setEnabled(false);txtPrawnFritters.setText("0");                                     //
+				txtSatay.setEnabled(false);txtSatay.setText("0");
+				txtAcar.setEnabled(false);txtAcar.setText("0");
+				txtKampungFriedRice.setEnabled(false);txtKampungFriedRice.setText("0");
+				txtChowFriedRice.setEnabled(false);txtChowFriedRice.setText("0");
+				txtAiskacang.setEnabled(false);txtAiskacang.setText("0");
+				txtGorengPisang.setEnabled(false);txtGorengPisang.setText("0");
 				
 			}
 		});
 		frame.setBounds(0, 0, 1000, 450);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("MALAYSIAN MENU");
@@ -314,15 +337,11 @@ public class MaOrder {
 		frame.getContentPane().add(txtGorengPisang);
 		txtGorengPisang.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("Cost =");
-		lblNewLabel_4.setBounds(805, 386, 46, 14);
-		frame.getContentPane().add(lblNewLabel_4);
-		
-		textField_9 = new JTextField();
-		textField_9.setText("");
-		textField_9.setBounds(860, 383, 86, 20);
-		frame.getContentPane().add(textField_9);
-		textField_9.setColumns(10);
+		txtCost = new JTextField();
+		txtCost.setText("");
+		txtCost.setBounds(860, 383, 89, 20);
+		frame.getContentPane().add(txtCost);
+		txtCost.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Reset");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -354,6 +373,63 @@ public class MaOrder {
 		});
 		btnNewButton.setBounds(632, 382, 89, 23);
 		frame.getContentPane().add(btnNewButton);
+		
+		JLabel lblNewLabel_5 = new JLabel("Manager");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_5.setBounds(10, 44, 64, 14);
+		frame.getContentPane().add(lblNewLabel_5);
+		
+		JLabel lblManager = new JLabel("New label");
+		lblManager.setBounds(136, 44, 73, 14);
+		frame.getContentPane().add(lblManager);
+		lblManager.setText(Manager);
+		
+		JLabel lblNewLabel_6 = new JLabel("Server");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_6.setBounds(304, 44, 46, 14);
+		frame.getContentPane().add(lblNewLabel_6);
+		
+		JLabel lblServer = new JLabel("New label");
+		lblServer.setBounds(427, 44, 93, 14);
+		frame.getContentPane().add(lblServer);
+		lblServer.setText(Server);
+		
+		JLabel lblNewLabel_7 = new JLabel("LineCook");
+		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_7.setBounds(599, 44, 74, 14);
+		frame.getContentPane().add(lblNewLabel_7);
+		
+		JLabel lblLineCook = new JLabel("New label");
+		lblLineCook.setBounds(726, 44, 106, 14);
+		frame.getContentPane().add(lblLineCook);
+		lblLineCook.setText(LineCook);
+		
+		JButton btnNewButton_1 = new JButton("Cost");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double mCost=KerabuSalad*Double.parseDouble(txtKerabuSalad.getText());                     // 	
+				double frCost=KaripapPusing*Double.parseDouble(txtKaripapPusing.getText());
+				double sCost=PrawnFritters*Double.parseDouble(txtPrawnFritters.getText());                     // 	
+				double chCost=Satay*Double.parseDouble(txtSatay.getText());
+				double aCost=Acar*Double.parseDouble(txtAcar.getText());                     // 	
+				double brCost=KampungFriedRice*Double.parseDouble(txtKampungFriedRice.getText());
+				double nCost=ChowFriedRice*Double.parseDouble(txtChowFriedRice.getText());                     // 	
+				double birCost=Aiskacang*Double.parseDouble(txtAiskacang.getText());
+				double rCost=GorengPisang*Double.parseDouble(txtGorengPisang.getText());                     // 	
+				
+				
+				
+				double Total= mCost+frCost+ sCost+chCost+aCost+brCost+nCost+birCost+rCost;
+				
+				String T= String.format("Rs %.2f", Total);
+				 	 
+				 
+				txtCost.setText(T);                      
+			}
+		});
+		btnNewButton_1.setBounds(860, 348, 89, 23);
+		frame.getContentPane().add(btnNewButton_1);
 	}
+	
 
 }

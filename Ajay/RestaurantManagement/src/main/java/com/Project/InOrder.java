@@ -67,15 +67,28 @@ public class InOrder {
 	private JCheckBox chckbxCake;
 	private JTextField txtCake;
 	private JButton btnReset;
+	public String Manager;
+	public  String Server;
+	public  String LineCook;
+	private JLabel lblNewLabel_3;
+	public JLabel lblManager;
+	private JLabel lblNewLabel_5;
+	public JLabel lblServer;
+	private JLabel label;
+	private JLabel lblNewLabel_4;
+	private JLabel lblLineCook;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void NewScreen() {                                        //
+	public void NewScreen() {    
+		 
+	
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					InOrder window = new InOrder();
+				
+					InOrder window = new InOrder(Manager, Server, LineCook);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -87,9 +100,18 @@ public class InOrder {
 	/**
 	 * Create the application.
 	 */
-	public InOrder() {
+	public InOrder(String a1,String a2,String a3) {
+		Manager=a1;
+		Server=a2;
+		LineCook=a3;
 		initialize();
+		{
+			
+			
+		}
 	}
+
+	
 
 	/**
 	 * Initialize the contents of the frame.
@@ -100,25 +122,32 @@ public class InOrder {
 			@Override
 			public void windowActivated(WindowEvent e) {
 				
-				txtManchuria.setEnabled(false);
-				txtFriedRice.setEnabled(false);
-				txtSpringRolls.setEnabled(false);                                     //
-				txtCheeseBalls.setEnabled(false);
-				txtAlooTikki.setEnabled(false);
-				txtBabyCorn.setEnabled(false);
-				txtNoodles.setEnabled(false);
-				txtBiryani.setEnabled(false);
-				txtRoti.setEnabled(false);
-				txtNaan.setEnabled(false);
-				txtPulav.setEnabled(false);
-				txtGulabJamun.setEnabled(false);
-				txtIceCream.setEnabled(false);
-				txtCake.setEnabled(false);
+				
+				
+				txtManchuria.setEnabled(false);txtManchuria.setText("0");
+				txtFriedRice.setEnabled(false);txtFriedRice.setText("0");
+				txtSpringRolls.setEnabled(false); txtSpringRolls.setText("0");                                    //
+				txtCheeseBalls.setEnabled(false);txtCheeseBalls.setText("0"); 
+				txtAlooTikki.setEnabled(false); txtAlooTikki.setText("0"); 
+				txtBabyCorn.setEnabled(false);txtBabyCorn.setText("0"); 
+				txtNoodles.setEnabled(false);txtNoodles.setText("0"); 
+				txtBiryani.setEnabled(false);txtBiryani.setText("0"); 
+				txtRoti.setEnabled(false);txtRoti.setText("0"); 
+				txtNaan.setEnabled(false);txtNaan.setText("0"); 
+				txtPulav.setEnabled(false);txtPulav.setText("0"); 
+				txtGulabJamun.setEnabled(false);txtGulabJamun.setText("0"); 
+				txtIceCream.setEnabled(false);txtIceCream.setText("0"); 
+				txtCake.setEnabled(false);txtCake.setText("0"); 
+				
+			//	lblManager.setText(Manager);
+				
+				
+				
 			}
 			
 		});
 		frame.setBounds(0,0,1000,450);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JCheckBox chckbxManchuria = new JCheckBox("Manchuria");
@@ -129,6 +158,7 @@ public class InOrder {
 					txtManchuria.setEnabled(true);
 					txtManchuria.setText("0");
 					txtManchuria.requestFocus();
+					
 				}
 				else
 				{
@@ -146,7 +176,7 @@ public class InOrder {
 		frame.getContentPane().add(txtManchuria);
 		txtManchuria.setColumns(10);
 		
-		JButton btnCost = new JButton("Cost=");
+		JButton btnCost = new JButton("Cost");
 		btnCost.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -162,15 +192,14 @@ public class InOrder {
 				double narCost=Naan*Double.parseDouble(txtNaan.getText());
 				double pCost=Pulav*Double.parseDouble(txtPulav.getText());                     // 	
 				double gCost=GulabJamun*Double.parseDouble(txtGulabJamun.getText());
-				double iCost=IceCream*Double.parseDouble(txtIceCream.getText());                     // 	
+				double iCost=IceCream*Double.parseDouble(txtIceCream.getText());                    	
 				double caCost=Cake*Double.parseDouble(txtCake.getText());
 				
 				
 				double Total= mCost+frCost+ sCost+chCost+aCost+brCost+nCost+birCost+rCost+narCost+ pCost+gCost+iCost+caCost;
 				
 				String T= String.format("Rs %.2f", Total);
-				 
-				 
+				 	 
 				 
 				txtCost.setText(T);                                                                           //
 			}
@@ -211,7 +240,7 @@ public class InOrder {
 		lblIndianMenu = new JLabel("INDIAN MENU");
 		lblIndianMenu.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIndianMenu.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblIndianMenu.setBounds(405, 0, 197, 72);
+		lblIndianMenu.setBounds(406, -18, 197, 58);
 		frame.getContentPane().add(lblIndianMenu);
 		
 		lblNewLabel = new JLabel("STARTERS");
@@ -243,6 +272,7 @@ public class InOrder {
 		frame.getContentPane().add(chckbxCheeseBalls);
 		
 		txtCheeseBalls = new JTextField();
+		txtCheeseBalls.setText("0");
 		txtCheeseBalls.setBounds(277, 117, 32, 20);
 		frame.getContentPane().add(txtCheeseBalls);
 		txtCheeseBalls.setColumns(10);
@@ -289,11 +319,13 @@ public class InOrder {
 		frame.getContentPane().add(chckbxAlooTikki);
 		
 		txtSpringRolls = new JTextField();
+		txtSpringRolls.setText("0");
 		txtSpringRolls.setBounds(456, 117, 32, 20);
 		frame.getContentPane().add(txtSpringRolls);
 		txtSpringRolls.setColumns(10);
 		
 		txtAlooTikki = new JTextField();
+		txtAlooTikki.setText("0");
 		txtAlooTikki.setBounds(623, 117, 32, 20);
 		frame.getContentPane().add(txtAlooTikki);
 		txtAlooTikki.setColumns(10);
@@ -320,6 +352,7 @@ public class InOrder {
 		frame.getContentPane().add(chckbxBabyCorn);
 		
 		txtBabyCorn = new JTextField();
+		txtBabyCorn.setText("0");
 		txtBabyCorn.setBounds(818, 117, 32, 20);
 		frame.getContentPane().add(txtBabyCorn);
 		txtBabyCorn.setColumns(10);
@@ -349,6 +382,7 @@ public class InOrder {
 		frame.getContentPane().add(chckbxNoodles);
 		
 		txtNoodles = new JTextField();
+		txtNoodles.setText("0");
 		txtNoodles.setBounds(264, 253, 32, 20);
 		frame.getContentPane().add(txtNoodles);
 		txtNoodles.setColumns(10);
@@ -373,6 +407,7 @@ public class InOrder {
 		frame.getContentPane().add(chckbxBiryani);
 		
 		txtBiryani = new JTextField();
+		txtBiryani.setText("0");
 		txtBiryani.setBounds(433, 253, 32, 20);
 		frame.getContentPane().add(txtBiryani);
 		txtBiryani.setColumns(10);
@@ -397,6 +432,7 @@ public class InOrder {
 		frame.getContentPane().add(chckbxRoti);
 		
 		txtRoti = new JTextField();
+		txtRoti.setText("0");
 		txtRoti.setBounds(571, 253, 32, 20);
 		frame.getContentPane().add(txtRoti);
 		txtRoti.setColumns(10);
@@ -422,6 +458,7 @@ public class InOrder {
 		frame.getContentPane().add(chckbxNaan);
 		
 		txtNaan = new JTextField();
+		txtNaan.setText("0");
 		txtNaan.setBounds(712, 253, 32, 20);
 		frame.getContentPane().add(txtNaan);
 		txtNaan.setColumns(10);
@@ -446,7 +483,8 @@ public class InOrder {
 		frame.getContentPane().add(chckbxPulav);
 		
 		txtPulav = new JTextField();
-		txtPulav.setBounds(839, 253, 32, 20);
+		txtPulav.setText("0");
+		txtPulav.setBounds(856, 253, 32, 20);
 		frame.getContentPane().add(txtPulav);
 		txtPulav.setColumns(10);
 		
@@ -500,7 +538,8 @@ public class InOrder {
 		frame.getContentPane().add(chckbxIceCream);
 		
 		txtIceCream = new JTextField();
-		txtIceCream.setBounds(264, 339, 32, 20);
+		txtIceCream.setText("0");
+		txtIceCream.setBounds(277, 339, 32, 20);
 		frame.getContentPane().add(txtIceCream);
 		txtIceCream.setColumns(10);
 		
@@ -524,6 +563,7 @@ public class InOrder {
 		frame.getContentPane().add(chckbxCake);
 		
 		txtCake = new JTextField();
+		txtCake.setText("0");
 		txtCake.setBounds(418, 339, 32, 20);
 		frame.getContentPane().add(txtCake);
 		txtCake.setColumns(10);
@@ -573,6 +613,45 @@ public class InOrder {
 		});
 		btnReset.setBounds(648, 377, 89, 23);
 		frame.getContentPane().add(btnReset);
+		
+		lblNewLabel_3 = new JLabel("Manager :");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_3.setBounds(27, 41, 75, 22);
+		frame.getContentPane().add(lblNewLabel_3);
+		
+		lblManager = new JLabel("New label");
+		lblManager.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblManager.setBounds(94, 46, 72, 14);
+		frame.getContentPane().add(lblManager);
+		lblManager.setText(Manager);
+		
+		
+		lblNewLabel_5 = new JLabel("Server :");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_5.setBounds(219, 41, 57, 23);
+		frame.getContentPane().add(lblNewLabel_5);
+		
+		lblServer = new JLabel("New label");
+		lblServer.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblServer.setBounds(277, 46, 79, 14);
+		frame.getContentPane().add(lblServer);
+		lblServer.setText(Server);
+		
+		label = new JLabel("");
+		label.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		label.setBounds(406, 47, 46, 14);
+		frame.getContentPane().add(label);
+		
+		lblNewLabel_4 = new JLabel("LineCook :");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_4.setBounds(416, 43, 63, 20);
+		frame.getContentPane().add(lblNewLabel_4);
+		
+		lblLineCook = new JLabel("New label");
+		lblLineCook.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblLineCook.setBounds(481, 47, 84, 14);
+		frame.getContentPane().add(lblLineCook);
+		lblLineCook.setText(LineCook);
 	}
 
 }

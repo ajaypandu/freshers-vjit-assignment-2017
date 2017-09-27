@@ -4,13 +4,17 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
+
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JButton;
 
 public class ChOrder {
@@ -26,16 +30,32 @@ public class ChOrder {
 	private JTextField txtPepperBeef;
 	private JTextField txtBananaRoll;
 	private JTextField txtCoconutBar;
-	private JTextField textField_10;
+	private JTextField txtCost;
+	public  String Manager;
+	public   String Server;
+	public   String LineCook;
+	
+	public double  EggDropSoup=50;                               //
+	public double PorkRibs=50;
+	public double  CrispyCrab=60;                               //
+	public double SpringRolls=70;
+	public double  KungPaoChicken=55;                               //
+	public double GingerVeggie=65;
+	public double  SpicyChicken=80;                               //
+	public double PepperBeef=100;
+	public double BananaRoll=10;                               //
+	public double CoconutBar=20;
+	                        //
+	
 
 	/**
 	 * Launch the application.
 	 */
-	public static void NewScreen1() {
+	public   void NewScreen1() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ChOrder window = new ChOrder();
+					ChOrder window = new ChOrder(Manager, Server, LineCook);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +67,10 @@ public class ChOrder {
 	/**
 	 * Create the application.
 	 */
-	public ChOrder() {
+	public ChOrder(String a1,String a2,String a3) {
+		Manager=a1;
+		Server=a2;
+		LineCook=a3;
 		initialize();
 	}
 
@@ -60,20 +83,20 @@ public class ChOrder {
 			@Override
 			public void windowActivated(WindowEvent e) {
 				
-				txtEggDropSoup.setEnabled(false);
-				txtPorkRibs.setEnabled(false);
-				txtCrispyCrab.setEnabled(false);                                     //
-				txtSpringRolls.setEnabled(false);
-				txtKungPaoChicken.setEnabled(false);
-				txtGingerVeggie.setEnabled(false);
-				txtSpicyChicken.setEnabled(false);
-				txtPepperBeef.setEnabled(false);
-				txtBananaRoll.setEnabled(false);
-				txtCoconutBar.setEnabled(false);
+				txtEggDropSoup.setEnabled(false);txtEggDropSoup.setText("0");
+				txtPorkRibs.setEnabled(false);txtPorkRibs.setText("0");
+				txtCrispyCrab.setEnabled(false); txtCrispyCrab.setText("0");
+				txtSpringRolls.setEnabled(false);txtSpringRolls.setText("0");
+				txtKungPaoChicken.setEnabled(false);txtKungPaoChicken.setText("0");
+				txtGingerVeggie.setEnabled(false);txtGingerVeggie.setText("0");
+				txtSpicyChicken.setEnabled(false);txtSpicyChicken.setText("0");
+				txtPepperBeef.setEnabled(false);txtPepperBeef.setText("0");
+				txtBananaRoll.setEnabled(false);txtBananaRoll.setText("0");
+				txtCoconutBar.setEnabled(false);txtCoconutBar.setText("0");
 			}
 		});
 		frame.setBounds(0, 0, 1000, 450);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("CHINESE MENU");
@@ -346,14 +369,10 @@ public class ChOrder {
 		frame.getContentPane().add(txtCoconutBar);
 		txtCoconutBar.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("Cost =");
-		lblNewLabel_4.setBounds(826, 390, 46, 14);
-		frame.getContentPane().add(lblNewLabel_4);
-		
-		textField_10 = new JTextField();
-		textField_10.setBounds(872, 387, 86, 20);
-		frame.getContentPane().add(textField_10);
-		textField_10.setColumns(10);
+		txtCost = new JTextField();
+		txtCost.setBounds(872, 387, 89, 20);
+		frame.getContentPane().add(txtCost);
+		txtCost.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Reset");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -389,5 +408,67 @@ public class ChOrder {
 		});
 		btnNewButton.setBounds(690, 386, 89, 23);
 		frame.getContentPane().add(btnNewButton);
+		
+		JLabel lblNewLabel_5 = new JLabel("Manager :");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_5.setBounds(25, 58, 74, 14);
+		frame.getContentPane().add(lblNewLabel_5);
+		
+		JLabel lblManager = new JLabel("New label");
+		lblManager.setBounds(97, 59, 46, 14);
+		frame.getContentPane().add(lblManager);
+		lblManager.setText(Manager);
+		
+		JLabel lblNewLabel_6 = new JLabel("Server :");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_6.setBounds(361, 58, 60, 14);
+		frame.getContentPane().add(lblNewLabel_6);
+		
+		JLabel lblServer = new JLabel("New label");
+		lblServer.setBounds(426, 59, 46, 14);
+		frame.getContentPane().add(lblServer);
+		lblServer.setText(Server);
+		
+		JLabel lblNewLabel_7 = new JLabel("LineCook :");
+		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_7.setBounds(690, 58, 66, 14);
+		frame.getContentPane().add(lblNewLabel_7);
+		
+		JLabel lblLineCook = new JLabel("New label");
+		lblLineCook.setBounds(760, 59, 46, 14);
+		frame.getContentPane().add(lblLineCook);
+		lblLineCook.setText(LineCook);
+		
+		JButton btnNewButton_1 = new JButton("Cost");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double mCost=EggDropSoup*Double.parseDouble(txtEggDropSoup.getText());                     // 	
+				double frCost=PorkRibs*Double.parseDouble(txtPorkRibs.getText());
+				double sCost=CrispyCrab*Double.parseDouble(txtCrispyCrab.getText());                     // 	
+				double chCost=SpringRolls*Double.parseDouble(txtSpringRolls.getText());
+				double aCost=GingerVeggie*Double.parseDouble(txtGingerVeggie.getText());                     // 	
+				double brCost=SpicyChicken*Double.parseDouble(txtSpicyChicken.getText());
+				double nCost=KungPaoChicken*Double.parseDouble(txtKungPaoChicken.getText());                     // 	
+				double birCost=PepperBeef*Double.parseDouble(txtPepperBeef.getText());
+				double rCost=BananaRoll*Double.parseDouble(txtBananaRoll.getText());                     // 	
+				double narCost=CoconutBar *Double.parseDouble(txtCoconutBar .getText());
+				                    // 	
+				
+				
+				double Total= mCost+frCost+ sCost+chCost+aCost+brCost+nCost+birCost+rCost+narCost;
+				
+				String T= String.format("Rs %.2f", Total);
+				 	 
+				 
+				txtCost.setText(T);                   
+				
+				
+				
+				
+			}
+		});
+		btnNewButton_1.setBounds(872, 352, 89, 23);
+		frame.getContentPane().add(btnNewButton_1);
+		
 	}
 }
