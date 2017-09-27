@@ -17,7 +17,7 @@ THIS WAS MY INITIAL THOUGHT AND IS SUBJECTED TO FURTHER CHANGES.
 
 How to run the file:
 
-Navigate to RestaurantManagement Folder and execute the Jar file(The jar file name can be found in RestaurantManagerment\target.
+Navigate to RestaurantManagement Folder and execute the Jar file(The jar file name can be found in RestaurantManagerment\target).
 
 Command for execution:
 
