@@ -37,6 +37,11 @@ public class IndianTable extends JFrame {
 		});
 	}
 
+	public void close()
+	{
+		this.setVisible(false);
+		this.dispose();
+	}
 	/**
 	 * Create the frame.
 	 */
@@ -56,7 +61,8 @@ public class IndianTable extends JFrame {
 				
 				
 				 InOrder nw =new InOrder("Raj","Konda","Mitra");                                              //
-				 nw.NewScreen();                                                         //
+				 nw.NewScreen(); 
+				 close();//
 							}
 		});
 		btnTable.setBounds(33, 54, 89, 23);
@@ -67,7 +73,8 @@ public class IndianTable extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				 InOrder nw =new InOrder("Ravi","Govind","Bhujam");                                           //
-				 nw.NewScreen();                                                     //
+				 nw.NewScreen();
+				 close();//
 			}
 		});
 		btnTable_1.setBounds(33, 227, 89, 23);
@@ -78,7 +85,8 @@ public class IndianTable extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				 InOrder nw =new InOrder("Kailesh","Rishi","Padma");                                           //
-				 nw.NewScreen();                                                     //
+				 nw.NewScreen();         
+				 close();//
 			}
 		});
 		btnTable_2.setBounds(368, 54, 89, 23);
@@ -89,7 +97,8 @@ public class IndianTable extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				 InOrder nw =new InOrder("Megha","Dinesh","Mohan");                                         //
-				 nw.NewScreen();                                                    //
+				 nw.NewScreen();   
+				 close();//
 			}
 		});
 		btnTable_3.setBounds(368, 227, 89, 23);
@@ -100,7 +109,8 @@ public class IndianTable extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				 InOrder nw =new InOrder("Gnani","Praveen","Harish");                                         //   
-				 nw.NewScreen();	                                                //
+				 nw.NewScreen();	
+				 close();//
 			}
 		});
 		btnNewButton.setBounds(166, 114, 157, 67);

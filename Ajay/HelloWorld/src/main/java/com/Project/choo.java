@@ -35,12 +35,17 @@ public class choo extends JFrame {
 		});
 	}
 
+	public void close()
+	{
+		this.setVisible(false);
+		this.dispose();
+	}
 	/**
 	 * Create the frame.
 	 */
 	public choo() {
 		getContentPane().setBackground(new Color(135, 206, 250));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 550, 300);
 		getContentPane().setLayout(null);
 		
@@ -51,6 +56,7 @@ public class choo extends JFrame {
 				
 				IndianTable Table1= new IndianTable();
 				Table1.setVisible(true);
+				close();
 				
 			}
 		});
@@ -65,7 +71,7 @@ public class choo extends JFrame {
 				ChineseTable Table1= new ChineseTable();
 				Table1.setVisible(true);
 				
-				
+				close();
 				
 			}
 		});
@@ -80,7 +86,7 @@ public class choo extends JFrame {
 			ItalianTable Table1= new ItalianTable();
 			Table1.setVisible(true);
 			
-			
+			close();
 				
 				
 			}
@@ -94,7 +100,7 @@ public class choo extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				MalaysianTable Table1= new MalaysianTable();
 				Table1.setVisible(true);
-				
+				close();
 			}
 		});
 		btnNewButton_3.setBounds(372, 177, 106, 23);
@@ -118,7 +124,7 @@ public class choo extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				MC Table1= new MC();
 				Table1.setVisible(true);
-				
+				close();
 			}
 		});
 		btnNewButton_4.setBounds(198, 134, 124, 23);

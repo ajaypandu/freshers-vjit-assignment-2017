@@ -31,7 +31,6 @@ public class ItOrder {
 	private JTextField txtBombolone;
 	private JTextField txtAmaretti;
 	private JTextField txtPanettone;
-	private JTextField txtCost;
 	public String Manager;
 	public  String Server;
 	public  String LineCook;
@@ -112,6 +111,18 @@ public class ItOrder {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblNewLabel_1.setBounds(10, 76, 111, 25);
 		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblSGST = new JLabel(" ");
+		lblSGST.setBounds(885, 326, 67, 19);
+		frame.getContentPane().add(lblSGST);
+		
+		JLabel lblCGST = new JLabel("");
+		lblCGST.setBounds(885, 357, 67, 14);
+		frame.getContentPane().add(lblCGST);
+		
+		JLabel lblCost = new JLabel("");
+		lblCost.setBounds(895, 386, 57, 14);
+		frame.getContentPane().add(lblCost);
 		
 		JCheckBox chckbxCapreseSalad = new JCheckBox("CapreseSalad");
 		chckbxCapreseSalad.addActionListener(new ActionListener() {
@@ -391,11 +402,6 @@ public class ItOrder {
 		frame.getContentPane().add(txtPanettone);
 		txtPanettone.setColumns(10);
 		
-		txtCost = new JTextField();
-		txtCost.setBounds(885, 383, 89, 20);
-		frame.getContentPane().add(txtCost);
-		txtCost.setColumns(10);
-		
 		JButton btnNewButton = new JButton("Reset");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -427,7 +433,7 @@ public class ItOrder {
 				
 			}
 		});
-		btnNewButton.setBounds(679, 382, 89, 23);
+		btnNewButton.setBounds(856, 51, 118, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_5 = new JLabel("Manager");
@@ -460,7 +466,7 @@ public class ItOrder {
 		frame.getContentPane().add(lblLineCook);
 		lblLineCook.setText(LineCook);
 		
-		JButton btnNewButton_1 = new JButton("Cost");
+		JButton btnNewButton_1 = new JButton("Total");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double mCost=CapreseSalad*Double.parseDouble(txtCapreseSalad.getText());                     // 	
@@ -477,15 +483,41 @@ public class ItOrder {
 				
 				
 				double Total= mCost+frCost+ sCost+chCost+aCost+brCost+nCost+birCost+rCost+narCost+ pCost;
+				double tax=((Total*9)/100);
+				String SGST= String.format("Rs %.2f", tax);
 				
-				String T= String.format("Rs %.2f", Total);
-				 	 
+					lblCGST.setText(SGST);
+					lblSGST.setText(SGST);
 				 
-				txtCost.setText(T);                                 
+				String T= String.format("Rs %.2f", Total+tax+tax);
+				 	 
+				 lblCost.setText(T);
+				                                 
 			}
 		});
-		btnNewButton_1.setBounds(885, 352, 89, 23);
+		btnNewButton_1.setBounds(779, 382, 89, 23);
 		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("FeedBack");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				FeedBackForm p= new FeedBackForm();
+				p.setVisible(true);
+			}
+		});
+		btnNewButton_2.setBounds(856, 79, 118, 23);
+		frame.getContentPane().add(btnNewButton_2);
+		
+		JLabel lblSgst = new JLabel("SGST-9%");
+		lblSgst.setBounds(779, 326, 67, 25);
+		frame.getContentPane().add(lblSgst);
+		
+		JLabel lblCgst = new JLabel("CGST-9%");
+		lblCgst.setBounds(779, 357, 56, 14);
+		frame.getContentPane().add(lblCgst);
+		
+		
 	}
 
 }

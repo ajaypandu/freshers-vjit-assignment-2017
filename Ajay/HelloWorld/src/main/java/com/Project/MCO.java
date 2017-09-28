@@ -30,7 +30,6 @@ public class MCO {
 	private JTextField txtGulabJamun;
 	private JTextField txtAiskacang;
 	private JTextField txtPanettone;
-	private JTextField txtCost;
 	public  String Manager;
 	public   String Server;
 	
@@ -120,6 +119,18 @@ public class MCO {
 		lblNewLabel_2.setBounds(10, 319, 89, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		
+		JLabel lblSGST = new JLabel("");
+		lblSGST.setBounds(899, 339, 46, 14);
+		frame.getContentPane().add(lblSGST);
+		
+		JLabel lblCGST = new JLabel("");
+		lblCGST.setBounds(899, 364, 46, 14);
+		frame.getContentPane().add(lblCGST);
+		
+		JLabel lblCost = new JLabel("");
+		lblCost.setBounds(899, 392, 46, 14);
+		frame.getContentPane().add(lblCost);
+		
 		JCheckBox chckbxManchuria = new JCheckBox("Manchuria");
 		chckbxManchuria.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -161,7 +172,7 @@ public class MCO {
 				
 			}
 		});
-		chckbxKerabuSalad.setBounds(278, 151, 97, 23);
+		chckbxKerabuSalad.setBounds(251, 151, 138, 23);
 		frame.getContentPane().add(chckbxKerabuSalad);
 		
 		txtKerabuSalad = new JTextField();
@@ -186,7 +197,7 @@ public class MCO {
 				
 			}
 		});
-		chckbxEggDropSoup.setBounds(535, 151, 97, 23);
+		chckbxEggDropSoup.setBounds(517, 151, 117, 23);
 		frame.getContentPane().add(chckbxEggDropSoup);
 		
 		txtEggDropSoup = new JTextField();
@@ -210,7 +221,7 @@ public class MCO {
 				}                  
 			}
 		});
-		chckbxCapreseSalad.setBounds(765, 151, 97, 23);
+		chckbxCapreseSalad.setBounds(756, 151, 106, 23);
 		frame.getContentPane().add(chckbxCapreseSalad);
 		
 		txtCapreseSalad = new JTextField();
@@ -278,7 +289,7 @@ public class MCO {
 				}                  
 			}
 		});
-		chckbxChickenScallopini.setBounds(278, 251, 110, 23);
+		chckbxChickenScallopini.setBounds(251, 251, 137, 23);
 		frame.getContentPane().add(chckbxChickenScallopini);
 		
 		txtChickenScallopini = new JTextField();
@@ -302,7 +313,7 @@ public class MCO {
 				}                  
 			}
 		});
-		chckbxKungPaoChicken.setBounds(535, 253, 106, 23);
+		chckbxKungPaoChicken.setBounds(517, 253, 124, 23);
 		frame.getContentPane().add(chckbxKungPaoChicken);
 		
 		txtKungPaoChicken = new JTextField();
@@ -326,7 +337,7 @@ public class MCO {
 				}                  
 			}
 		});
-		chckbxAcar.setBounds(765, 253, 97, 23);
+		chckbxAcar.setBounds(756, 253, 106, 23);
 		frame.getContentPane().add(chckbxAcar);
 		
 		txtAcar = new JTextField();
@@ -355,7 +366,7 @@ public class MCO {
 				}                  
 			}
 		});
-		chckbxAiskacang.setBounds(278, 355, 97, 23);
+		chckbxAiskacang.setBounds(251, 355, 124, 23);
 		frame.getContentPane().add(chckbxAiskacang);
 		
 		txtAiskacang = new JTextField();
@@ -379,7 +390,7 @@ public class MCO {
 				}                  
 			}
 		});
-		chckbxPanettone.setBounds(535, 355, 97, 23);
+		chckbxPanettone.setBounds(517, 355, 115, 23);
 		frame.getContentPane().add(chckbxPanettone);
 		
 		txtPanettone = new JTextField();
@@ -424,10 +435,10 @@ public class MCO {
 				
 			}
 		});
-		btnNewButton.setBounds(687, 388, 89, 23);
+		btnNewButton.setBounds(885, 19, 89, 23);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Cost");
+		JButton btnNewButton_1 = new JButton("Total");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double mCost=EggDropSoup*Double.parseDouble(txtEggDropSoup.getText());                     // 	
@@ -446,19 +457,20 @@ public class MCO {
 				
 				double Total= mCost+frCost+ sCost+chCost+aCost+brCost+nCost+birCost+rCost+narCost+ pCost;
 				
-				String T= String.format("Rs %.2f", Total);
+				double tax=((Total*9)/100);
+				String SGST= String.format("Rs %.2f", tax);
+				
+					lblCGST.setText(SGST);
+					lblSGST.setText(SGST);
+				 
+				String T= String.format("Rs %.2f", Total+tax+tax);
 				 	 
 				 
-				txtCost.setText(T);                   
+				lblCost.setText(T);                  
 			}
 		});
-		btnNewButton_1.setBounds(885, 355, 89, 23);
+		btnNewButton_1.setBounds(768, 388, 89, 23);
 		frame.getContentPane().add(btnNewButton_1);
-		
-		txtCost = new JTextField();
-		txtCost.setBounds(885, 389, 89, 20);
-		frame.getContentPane().add(txtCost);
-		txtCost.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Manager :");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 13));
@@ -479,6 +491,27 @@ public class MCO {
 		lblServer.setBounds(251, 56, 77, 14);
 		frame.getContentPane().add(lblServer);
 		lblServer.setText(Server);
+		
+		JButton btnNewButton_2 = new JButton("FeedBack");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				FeedBackForm p= new FeedBackForm();
+				p.setVisible(true);
+			}
+		});
+		btnNewButton_2.setBounds(885, 56, 89, 23);
+		frame.getContentPane().add(btnNewButton_2);
+		
+		JLabel lblNewLabel_5 = new JLabel("SGST-9%");
+		lblNewLabel_5.setBounds(768, 339, 46, 14);
+		frame.getContentPane().add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("CGST-9%");
+		lblNewLabel_6.setBounds(768, 364, 53, 14);
+		frame.getContentPane().add(lblNewLabel_6);
+		
+		
 		
 	}
 

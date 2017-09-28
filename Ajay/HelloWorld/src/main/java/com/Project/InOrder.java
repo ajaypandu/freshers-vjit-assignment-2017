@@ -11,15 +11,17 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.SwingConstants;
 
 public class InOrder {
 
 	private JFrame frame;
 	private JTextField txtManchuria;       
-	private JTextField txtCost;
 	
 	public double  Manchuria=50;                               //
 	public double FriedRice=50;
@@ -77,6 +79,9 @@ public class InOrder {
 	private JLabel label;
 	private JLabel lblNewLabel_4;
 	private JLabel lblLineCook;
+	private JLabel lblSGST;
+	private JLabel lblCGST;
+	private JLabel lblCost;
 
 	/**
 	 * Launch the application.
@@ -172,11 +177,12 @@ public class InOrder {
 		frame.getContentPane().add(chckbxManchuria);
 		
 		txtManchuria = new JTextField();
+		txtManchuria.setText("0");
 		txtManchuria.setBounds(117, 117, 32, 20);
 		frame.getContentPane().add(txtManchuria);
 		txtManchuria.setColumns(10);
 		
-		JButton btnCost = new JButton("Cost");
+		JButton btnCost = new JButton("Total");
 		btnCost.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -197,20 +203,22 @@ public class InOrder {
 				
 				
 				double Total= mCost+frCost+ sCost+chCost+aCost+brCost+nCost+birCost+rCost+narCost+ pCost+gCost+iCost+caCost;
+				double tax=((Total*9)/100);
+				String SGST= String.format("Rs %.2f", tax);
+						
+				lblSGST.setText(SGST);
+				lblCGST.setText(SGST);
 				
-				String T= String.format("Rs %.2f", Total);
+				
+				String T= String.format("Rs %.2f", Total+tax+tax);
 				 	 
 				 
-				txtCost.setText(T);                                                                           //
+				
+				lblCost.setText(T);//
 			}
 		});
-		btnCost.setBounds(792, 377, 79, 23);
+		btnCost.setBounds(761, 377, 79, 23);
 		frame.getContentPane().add(btnCost);
-		
-		txtCost = new JTextField();
-		txtCost.setBounds(871, 378, 86, 20);
-		frame.getContentPane().add(txtCost);
-		txtCost.setColumns(10);
 		
 		chckbxFriedRice = new JCheckBox("FriedRice");
 		chckbxFriedRice.addActionListener(new ActionListener() {
@@ -233,6 +241,7 @@ public class InOrder {
 		frame.getContentPane().add(chckbxFriedRice);
 		
 		txtFriedRice = new JTextField();
+		txtFriedRice.setText("0");
 		txtFriedRice.setBounds(117, 253, 32, 20);
 		frame.getContentPane().add(txtFriedRice);
 		txtFriedRice.setColumns(10);
@@ -514,6 +523,7 @@ public class InOrder {
 		frame.getContentPane().add(chckbxGulabJamun);
 		
 		txtGulabJamun = new JTextField();
+		txtGulabJamun.setText("0");
 		txtGulabJamun.setBounds(134, 339, 32, 20);
 		frame.getContentPane().add(txtGulabJamun);
 		txtGulabJamun.setColumns(10);
@@ -578,7 +588,7 @@ public class InOrder {
 				txtBiryani.setText(null);
 				txtFriedRice.setText(null);
 				txtIceCream.setText(null);
-				txtCost.setText(null);
+				
 				txtCheeseBalls.setText(null);
 				txtNoodles.setText(null);
 				txtRoti.setText(null);
@@ -587,7 +597,9 @@ public class InOrder {
 				txtGulabJamun.setText(null);
 				txtAlooTikki.setText(null);
 				txtCake.setText(null);
-				
+				lblSGST.setText(null);
+				lblCGST.setText(null);
+				lblCost.setText(null);
 				
 				
 				chckbxManchuria.setSelected(false);				
@@ -611,7 +623,7 @@ public class InOrder {
 				
 			}
 		});
-		btnReset.setBounds(648, 377, 89, 23);
+		btnReset.setBounds(856, 40, 104, 23);
 		frame.getContentPane().add(btnReset);
 		
 		lblNewLabel_3 = new JLabel("Manager :");
@@ -652,6 +664,37 @@ public class InOrder {
 		lblLineCook.setBounds(481, 47, 84, 14);
 		frame.getContentPane().add(lblLineCook);
 		lblLineCook.setText(LineCook);
+		
+		JLabel lblNewLabel_6 = new JLabel("SGST- 9%");
+		lblNewLabel_6.setBounds(761, 315, 79, 23);
+		frame.getContentPane().add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("CGST-9%");
+		lblNewLabel_7.setBounds(761, 343, 79, 23);
+		frame.getContentPane().add(lblNewLabel_7);
+		
+		lblSGST = new JLabel("");
+		lblSGST.setBounds(871, 315, 82, 14);
+		frame.getContentPane().add(lblSGST);
+		
+		lblCGST = new JLabel("");
+		lblCGST.setBounds(871, 338, 82, 14);
+		frame.getContentPane().add(lblCGST);
+		
+		JButton btnFeedback = new JButton("FeedBack");
+		btnFeedback.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				frame.dispose();
+				FeedBackForm p= new FeedBackForm();
+				p.setVisible(true);
+			}
+		});
+		btnFeedback.setBounds(856, 77, 104, 23);
+		frame.getContentPane().add(btnFeedback);
+		
+		lblCost = new JLabel("");
+		lblCost.setBounds(871, 382, 75, 18);
+		frame.getContentPane().add(lblCost);
 	}
-
 }

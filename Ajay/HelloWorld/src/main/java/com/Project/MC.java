@@ -17,7 +17,7 @@ public class MC extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
+	/**  a	qw
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {

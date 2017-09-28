@@ -29,7 +29,7 @@ public class MaOrder {
 	private JTextField txtChowFriedRice;
 	private JTextField txtAiskacang;
 	private JTextField txtGorengPisang;
-	private JTextField txtCost;
+	private JLabel lblCost;
 	public String Manager;
 	public  String Server;
 	public  String LineCook;
@@ -101,6 +101,17 @@ public class MaOrder {
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblNewLabel.setBounds(427, 11, 218, 25);
 		frame.getContentPane().add(lblNewLabel);
+		JLabel lblCGST = new JLabel("");
+		lblCGST.setBounds(860, 352, 46, 14);
+		frame.getContentPane().add(lblCGST);
+		
+		JLabel lblSGST = new JLabel("");
+		lblSGST.setBounds(860, 318, 46, 14);
+		frame.getContentPane().add(lblSGST);
+		
+		JLabel lblCost = new JLabel("");
+		lblCost.setBounds(860, 377, 64, 23);
+		frame.getContentPane().add(lblCost);
 		
 		JLabel lblNewLabel_1 = new JLabel("STARTERS");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -337,12 +348,6 @@ public class MaOrder {
 		frame.getContentPane().add(txtGorengPisang);
 		txtGorengPisang.setColumns(10);
 		
-		txtCost = new JTextField();
-		txtCost.setText("");
-		txtCost.setBounds(860, 383, 89, 20);
-		frame.getContentPane().add(txtCost);
-		txtCost.setColumns(10);
-		
 		JButton btnNewButton = new JButton("Reset");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -371,7 +376,7 @@ public class MaOrder {
 				
 			}
 		});
-		btnNewButton.setBounds(632, 382, 89, 23);
+		btnNewButton.setBounds(860, 41, 114, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_5 = new JLabel("Manager");
@@ -404,8 +409,8 @@ public class MaOrder {
 		frame.getContentPane().add(lblLineCook);
 		lblLineCook.setText(LineCook);
 		
-		JButton btnNewButton_1 = new JButton("Cost");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnCost = new JButton("Total");
+		btnCost.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double mCost=KerabuSalad*Double.parseDouble(txtKerabuSalad.getText());                     // 	
 				double frCost=KaripapPusing*Double.parseDouble(txtKaripapPusing.getText());
@@ -421,14 +426,43 @@ public class MaOrder {
 				
 				double Total= mCost+frCost+ sCost+chCost+aCost+brCost+nCost+birCost+rCost;
 				
-				String T= String.format("Rs %.2f", Total);
-				 	 
+				double tax=((Total*9)/100);
+				String SGST= String.format("Rs %.2f", tax);
+				
+					lblCGST.setText(SGST);
+					lblSGST.setText(SGST);
 				 
-				txtCost.setText(T);                      
+				String T= String.format("Rs %.2f", Total+tax+tax);
+				 	 
+				 lblCost.setText(T);            
+				
+				  
+				
 			}
 		});
-		btnNewButton_1.setBounds(860, 348, 89, 23);
-		frame.getContentPane().add(btnNewButton_1);
+		btnCost.setBounds(755, 377, 89, 23);
+		frame.getContentPane().add(btnCost);
+		
+		JButton btnNewButton_3 = new JButton("FeedBack");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				FeedBackForm p= new FeedBackForm();
+				p.setVisible(true);
+			}
+		});
+		btnNewButton_3.setBounds(860, 79, 114, 23);
+		frame.getContentPane().add(btnNewButton_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("CGST-9%");
+		lblNewLabel_4.setBounds(755, 352, 64, 14);
+		frame.getContentPane().add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_8 = new JLabel("SGST- 9%");
+		lblNewLabel_8.setBounds(755, 318, 64, 14);
+		frame.getContentPane().add(lblNewLabel_8);
+		
+		
 	}
 	
 

@@ -30,10 +30,13 @@ public class ChOrder {
 	private JTextField txtPepperBeef;
 	private JTextField txtBananaRoll;
 	private JTextField txtCoconutBar;
-	private JTextField txtCost;
 	public  String Manager;
 	public   String Server;
 	public   String LineCook;
+	private JLabel lblSGST;
+	private JLabel lblCGST;
+	private JLabel lblCost;
+	
 	
 	public double  EggDropSoup=50;                               //
 	public double PorkRibs=50;
@@ -98,6 +101,19 @@ public class ChOrder {
 		frame.setBounds(0, 0, 1000, 450);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+
+		JLabel lblSGST = new JLabel("");
+		lblSGST.setBounds(895, 342, 60, 14);
+		frame.getContentPane().add(lblSGST);
+		
+		JLabel lblCGST = new JLabel("");
+		lblCGST.setBounds(895, 363, 60, 14);
+		frame.getContentPane().add(lblCGST);
+		
+		JLabel lblCost = new JLabel("");
+		lblCost.setBounds(895, 386, 79, 25);
+		frame.getContentPane().add(lblCost);
 		
 		JLabel lblNewLabel = new JLabel("CHINESE MENU");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -369,11 +385,6 @@ public class ChOrder {
 		frame.getContentPane().add(txtCoconutBar);
 		txtCoconutBar.setColumns(10);
 		
-		txtCost = new JTextField();
-		txtCost.setBounds(872, 387, 89, 20);
-		frame.getContentPane().add(txtCost);
-		txtCost.setColumns(10);
-		
 		JButton btnNewButton = new JButton("Reset");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -406,7 +417,7 @@ public class ChOrder {
 				
 			}
 		});
-		btnNewButton.setBounds(690, 386, 89, 23);
+		btnNewButton.setBounds(865, 55, 109, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_5 = new JLabel("Manager :");
@@ -439,8 +450,8 @@ public class ChOrder {
 		frame.getContentPane().add(lblLineCook);
 		lblLineCook.setText(LineCook);
 		
-		JButton btnNewButton_1 = new JButton("Cost");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnCost = new JButton("Total");
+		btnCost.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double mCost=EggDropSoup*Double.parseDouble(txtEggDropSoup.getText());                     // 	
 				double frCost=PorkRibs*Double.parseDouble(txtPorkRibs.getText());
@@ -456,18 +467,42 @@ public class ChOrder {
 				
 				
 				double Total= mCost+frCost+ sCost+chCost+aCost+brCost+nCost+birCost+rCost+narCost;
+				double tax=((Total*9)/100);
+				String SGST= String.format("Rs %.2f", tax);
 				
-				String T= String.format("Rs %.2f", Total);
-				 	 
+					lblCGST.setText(SGST);
+					lblSGST.setText(SGST);
 				 
-				txtCost.setText(T);                   
+				String T= String.format("Rs %.2f", Total+tax+tax);
+				 	 
+				 lblCost.setText(T);            
 				
 				
 				
 				
 			}
 		});
-		btnNewButton_1.setBounds(872, 352, 89, 23);
+		btnCost.setBounds(784, 388, 89, 23);
+		frame.getContentPane().add(btnCost);
+		
+		JLabel lblNewLabel_4 = new JLabel("SGST- 9%");
+		lblNewLabel_4.setBounds(784, 342, 66, 14);
+		frame.getContentPane().add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_8 = new JLabel("CGST-9%");
+		lblNewLabel_8.setBounds(784, 363, 66, 14);
+		frame.getContentPane().add(lblNewLabel_8);
+		
+		
+		JButton btnNewButton_1 = new JButton("FeedBack");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				FeedBackForm p= new FeedBackForm();
+				p.setVisible(true);
+			}
+		});
+		btnNewButton_1.setBounds(865, 89, 109, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
 	}

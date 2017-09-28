@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
 
-public class MalaysianTable extends JFrame {
+public  class MalaysianTable extends JFrame {
 
 	private JPanel contentPane;
 
@@ -32,7 +32,11 @@ public class MalaysianTable extends JFrame {
 			}
 		});
 	}
-
+	public void close()
+	{
+		this.setVisible(false);
+		this.dispose();
+	}
 	/**
 	 * Create the frame.
 	 */
@@ -47,10 +51,11 @@ public class MalaysianTable extends JFrame {
 		JButton btnNewButton = new JButton("Table 16");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				MaOrder nw3 =new MaOrder("ajay","Server1","Chef1");                                         //
 				 nw3.NewScreen3();                                                    //
 			
-				
+				 close();
 				
 				
 			}
@@ -62,7 +67,7 @@ public class MalaysianTable extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MaOrder nw3 =new MaOrder("Manager1","Server1","Chef1");                                         //
-				 nw3.NewScreen3();                                                    //
+				 nw3.NewScreen3();  close();                                                  //
 				
 			}
 			
@@ -76,7 +81,7 @@ public class MalaysianTable extends JFrame {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MaOrder nw3 =new MaOrder("Manager1","Server1","Chef1");                                         //
-				 nw3.NewScreen3();                                                    //
+				 nw3.NewScreen3();   close();                                                 //
 			}
 		});
 		btnNewButton_2.setBounds(62, 161, 89, 23);
@@ -86,7 +91,7 @@ public class MalaysianTable extends JFrame {
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MaOrder nw3 =new MaOrder("Manager1","Server1","Chef1");                                         //
-				 nw3.NewScreen3();                                                    //
+				 nw3.NewScreen3();  close();                                                  //
 			}
 		});
 		btnNewButton_3.setBounds(258, 161, 89, 23);
@@ -96,7 +101,7 @@ public class MalaysianTable extends JFrame {
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MaOrder nw3 =new MaOrder("Manager1","Server1","Chef1");                                         //
-				 nw3.NewScreen3();                                                    //
+				 nw3.NewScreen3();    close();                                                //
 			}
 		});
 		btnNewButton_4.setBounds(162, 108, 89, 23);
@@ -111,6 +116,15 @@ public class MalaysianTable extends JFrame {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_1.setBounds(276, 11, 148, 14);
 		contentPane.add(lblNewLabel_1);
+		
+		JButton btnNewButton_5 = new JButton("exit");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 
+			}
+		});
+		btnNewButton_5.setBounds(162, 227, 89, 23);
+		contentPane.add(btnNewButton_5);
 	}
 
 }
