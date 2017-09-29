@@ -98,7 +98,7 @@ public class ItOrder {
 				
 			}
 		});
-		frame.setBounds(0, 0, 1000, 450);
+		frame.setBounds(0, 0, 1028, 504);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -113,15 +113,15 @@ public class ItOrder {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblSGST = new JLabel(" ");
-		lblSGST.setBounds(885, 326, 67, 19);
+		lblSGST.setBounds(915, 376, 67, 19);
 		frame.getContentPane().add(lblSGST);
 		
 		JLabel lblCGST = new JLabel("");
-		lblCGST.setBounds(885, 357, 67, 14);
+		lblCGST.setBounds(915, 406, 67, 14);
 		frame.getContentPane().add(lblCGST);
 		
 		JLabel lblCost = new JLabel("");
-		lblCost.setBounds(895, 386, 57, 14);
+		lblCost.setBounds(915, 435, 74, 19);
 		frame.getContentPane().add(lblCost);
 		
 		JCheckBox chckbxCapreseSalad = new JCheckBox("CapreseSalad");
@@ -436,33 +436,33 @@ public class ItOrder {
 		btnNewButton.setBounds(856, 51, 118, 23);
 		frame.getContentPane().add(btnNewButton);
 		
-		JLabel lblNewLabel_5 = new JLabel("Manager");
+		JLabel lblNewLabel_5 = new JLabel("Manager :");
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_5.setBounds(28, 41, 67, 14);
 		frame.getContentPane().add(lblNewLabel_5);
 		
 		JLabel lblManager = new JLabel("New label");
-		lblManager.setBounds(116, 41, 46, 14);
+		lblManager.setBounds(100, 42, 46, 14);
 		frame.getContentPane().add(lblManager);
 		lblManager.setText(Manager);
 		
-		JLabel lblNewLabel_6 = new JLabel("Server");
+		JLabel lblNewLabel_6 = new JLabel("Server :");
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_6.setBounds(314, 41, 46, 14);
+		lblNewLabel_6.setBounds(314, 41, 55, 14);
 		frame.getContentPane().add(lblNewLabel_6);
 		
 		JLabel lblServer = new JLabel("New label");
-		lblServer.setBounds(417, 41, 46, 14);
+		lblServer.setBounds(374, 42, 46, 14);
 		frame.getContentPane().add(lblServer);
 		lblServer.setText(Server);
 		
-		JLabel lblNewLabel_7 = new JLabel("LineCook");
+		JLabel lblNewLabel_7 = new JLabel("LineCook :");
 		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_7.setBounds(607, 41, 60, 14);
+		lblNewLabel_7.setBounds(607, 41, 80, 14);
 		frame.getContentPane().add(lblNewLabel_7);
 		
 		JLabel lblLineCook = new JLabel("New label");
-		lblLineCook.setBounds(711, 41, 67, 14);
+		lblLineCook.setBounds(683, 42, 67, 14);
 		frame.getContentPane().add(lblLineCook);
 		lblLineCook.setText(LineCook);
 		
@@ -495,7 +495,7 @@ public class ItOrder {
 				                                 
 			}
 		});
-		btnNewButton_1.setBounds(779, 382, 89, 23);
+		btnNewButton_1.setBounds(733, 431, 89, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("FeedBack");
@@ -510,12 +510,35 @@ public class ItOrder {
 		frame.getContentPane().add(btnNewButton_2);
 		
 		JLabel lblSgst = new JLabel("SGST-9%");
-		lblSgst.setBounds(779, 326, 67, 25);
+		lblSgst.setBounds(818, 373, 67, 25);
 		frame.getContentPane().add(lblSgst);
 		
 		JLabel lblCgst = new JLabel("CGST-9%");
-		lblCgst.setBounds(779, 357, 56, 14);
+		lblCgst.setBounds(818, 406, 56, 14);
 		frame.getContentPane().add(lblCgst);
+		
+		JButton btnNewButton_3 = new JButton("Go Back");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				ItalianTable p= new ItalianTable();
+				p.setVisible(true);
+				
+			}
+		});
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_3.setBounds(856, 16, 118, 23);
+		frame.getContentPane().add(btnNewButton_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Tax");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_4.setBounds(762, 378, 46, 14);
+		frame.getContentPane().add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_8 = new JLabel("BILL");
+		lblNewLabel_8.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_8.setBounds(868, 350, 46, 14);
+		frame.getContentPane().add(lblNewLabel_8);
 		
 		
 	}

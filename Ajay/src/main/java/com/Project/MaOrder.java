@@ -93,7 +93,7 @@ public class MaOrder {
 				
 			}
 		});
-		frame.setBounds(0, 0, 1000, 450);
+		frame.setBounds(0, 0, 1028, 504);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -102,15 +102,15 @@ public class MaOrder {
 		lblNewLabel.setBounds(427, 11, 218, 25);
 		frame.getContentPane().add(lblNewLabel);
 		JLabel lblCGST = new JLabel("");
-		lblCGST.setBounds(860, 352, 46, 14);
+		lblCGST.setBounds(909, 399, 64, 14);
 		frame.getContentPane().add(lblCGST);
 		
 		JLabel lblSGST = new JLabel("");
-		lblSGST.setBounds(860, 318, 46, 14);
+		lblSGST.setBounds(909, 372, 64, 14);
 		frame.getContentPane().add(lblSGST);
 		
 		JLabel lblCost = new JLabel("");
-		lblCost.setBounds(860, 377, 64, 23);
+		lblCost.setBounds(909, 431, 64, 23);
 		frame.getContentPane().add(lblCost);
 		
 		JLabel lblNewLabel_1 = new JLabel("STARTERS");
@@ -379,33 +379,33 @@ public class MaOrder {
 		btnNewButton.setBounds(860, 41, 114, 23);
 		frame.getContentPane().add(btnNewButton);
 		
-		JLabel lblNewLabel_5 = new JLabel("Manager");
+		JLabel lblNewLabel_5 = new JLabel("Manager :");
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_5.setBounds(10, 44, 64, 14);
+		lblNewLabel_5.setBounds(34, 41, 73, 17);
 		frame.getContentPane().add(lblNewLabel_5);
 		
 		JLabel lblManager = new JLabel("New label");
-		lblManager.setBounds(136, 44, 73, 14);
+		lblManager.setBounds(104, 41, 78, 14);
 		frame.getContentPane().add(lblManager);
 		lblManager.setText(Manager);
 		
-		JLabel lblNewLabel_6 = new JLabel("Server");
+		JLabel lblNewLabel_6 = new JLabel("Server :");
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_6.setBounds(304, 44, 46, 14);
+		lblNewLabel_6.setBounds(304, 41, 53, 17);
 		frame.getContentPane().add(lblNewLabel_6);
 		
 		JLabel lblServer = new JLabel("New label");
-		lblServer.setBounds(427, 44, 93, 14);
+		lblServer.setBounds(366, 41, 97, 14);
 		frame.getContentPane().add(lblServer);
 		lblServer.setText(Server);
 		
-		JLabel lblNewLabel_7 = new JLabel("LineCook");
+		JLabel lblNewLabel_7 = new JLabel("LineCook :");
 		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_7.setBounds(599, 44, 74, 14);
+		lblNewLabel_7.setBounds(599, 41, 74, 17);
 		frame.getContentPane().add(lblNewLabel_7);
 		
 		JLabel lblLineCook = new JLabel("New label");
-		lblLineCook.setBounds(726, 44, 106, 14);
+		lblLineCook.setBounds(671, 41, 106, 14);
 		frame.getContentPane().add(lblLineCook);
 		lblLineCook.setText(LineCook);
 		
@@ -440,7 +440,7 @@ public class MaOrder {
 				
 			}
 		});
-		btnCost.setBounds(755, 377, 89, 23);
+		btnCost.setBounds(726, 431, 89, 23);
 		frame.getContentPane().add(btnCost);
 		
 		JButton btnNewButton_3 = new JButton("FeedBack");
@@ -451,16 +451,39 @@ public class MaOrder {
 				p.setVisible(true);
 			}
 		});
-		btnNewButton_3.setBounds(860, 79, 114, 23);
+		btnNewButton_3.setBounds(859, 75, 114, 23);
 		frame.getContentPane().add(btnNewButton_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("CGST-9%");
-		lblNewLabel_4.setBounds(755, 352, 64, 14);
+		lblNewLabel_4.setBounds(815, 399, 64, 14);
 		frame.getContentPane().add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_8 = new JLabel("SGST- 9%");
-		lblNewLabel_8.setBounds(755, 318, 64, 14);
+		lblNewLabel_8.setBounds(815, 372, 64, 14);
 		frame.getContentPane().add(lblNewLabel_8);
+		
+		JButton btnNewButton_1 = new JButton("Go Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				MalaysianTable p= new MalaysianTable();
+				p.setVisible(true);
+				
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_1.setBounds(860, 11, 113, 23);
+		frame.getContentPane().add(btnNewButton_1);
+		
+		JLabel lblNewLabel_9 = new JLabel("Tax");
+		lblNewLabel_9.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_9.setBounds(751, 372, 46, 14);
+		frame.getContentPane().add(lblNewLabel_9);
+		
+		JLabel lblNewLabel_10 = new JLabel("BILL");
+		lblNewLabel_10.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_10.setBounds(846, 330, 46, 14);
+		frame.getContentPane().add(lblNewLabel_10);
 		
 		
 	}

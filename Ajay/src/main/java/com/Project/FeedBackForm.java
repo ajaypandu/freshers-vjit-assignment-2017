@@ -8,8 +8,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JEditorPane;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -35,7 +37,11 @@ public class FeedBackForm extends JFrame {
 			}
 		});
 	}
-
+	public void close()
+	{
+		this.setVisible(false);
+		this.dispose();
+	}
 	/**
 	 * Create the frame.
 	 */
@@ -82,7 +88,9 @@ public class FeedBackForm extends JFrame {
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				Message p=new Message();
+				p.setVisible(true);
+				close();
 			}
 		});
 		btnSubmit.setBounds(319, 427, 89, 23);

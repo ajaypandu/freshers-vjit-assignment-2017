@@ -50,7 +50,7 @@ public class ChOrder {
 	public double CoconutBar=20;
 	                        //
 	
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -98,21 +98,21 @@ public class ChOrder {
 				txtCoconutBar.setEnabled(false);txtCoconutBar.setText("0");
 			}
 		});
-		frame.setBounds(0, 0, 1000, 450);
+		frame.setBounds(0, 0, 1028, 504);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 
 		JLabel lblSGST = new JLabel("");
-		lblSGST.setBounds(895, 342, 60, 14);
+		lblSGST.setBounds(895, 382, 60, 14);
 		frame.getContentPane().add(lblSGST);
 		
 		JLabel lblCGST = new JLabel("");
-		lblCGST.setBounds(895, 363, 60, 14);
+		lblCGST.setBounds(895, 407, 60, 14);
 		frame.getContentPane().add(lblCGST);
 		
 		JLabel lblCost = new JLabel("");
-		lblCost.setBounds(895, 386, 79, 25);
+		lblCost.setBounds(895, 440, 79, 25);
 		frame.getContentPane().add(lblCost);
 		
 		JLabel lblNewLabel = new JLabel("CHINESE MENU");
@@ -482,15 +482,15 @@ public class ChOrder {
 				
 			}
 		});
-		btnCost.setBounds(784, 388, 89, 23);
+		btnCost.setBounds(716, 431, 89, 23);
 		frame.getContentPane().add(btnCost);
 		
 		JLabel lblNewLabel_4 = new JLabel("SGST- 9%");
-		lblNewLabel_4.setBounds(784, 342, 66, 14);
+		lblNewLabel_4.setBounds(807, 385, 66, 14);
 		frame.getContentPane().add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_8 = new JLabel("CGST-9%");
-		lblNewLabel_8.setBounds(784, 363, 66, 14);
+		lblNewLabel_8.setBounds(807, 407, 66, 14);
 		frame.getContentPane().add(lblNewLabel_8);
 		
 		
@@ -504,6 +504,28 @@ public class ChOrder {
 		});
 		btnNewButton_1.setBounds(865, 89, 109, 23);
 		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Go Back");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ChineseTable Table1= new ChineseTable();
+				Table1.setVisible(true);
+				frame.dispose();
+			}
+		});
+		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_2.setBounds(865, 21, 109, 23);
+		frame.getContentPane().add(btnNewButton_2);
+		
+		JLabel lblNewLabel_9 = new JLabel("Tax");
+		lblNewLabel_9.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_9.setBounds(741, 382, 46, 14);
+		frame.getContentPane().add(lblNewLabel_9);
+		
+		JLabel lblNewLabel_10 = new JLabel("BILL");
+		lblNewLabel_10.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_10.setBounds(853, 356, 46, 14);
+		frame.getContentPane().add(lblNewLabel_10);
 		
 	}
 }

@@ -62,7 +62,7 @@ public class MCO {
 			}
 		});
 	}
-
+	
 	/**
 	 * Create the application.
 	 */
@@ -95,7 +95,7 @@ public class MCO {
 				txtAiskacang.setEnabled(false);txtAiskacang.setText("0");
 			}
 		});
-		frame.setBounds(0, 0, 1000, 450);
+		frame.setBounds(0, 0, 1028, 504);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -120,15 +120,15 @@ public class MCO {
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblSGST = new JLabel("");
-		lblSGST.setBounds(899, 339, 46, 14);
+		lblSGST.setBounds(899, 385, 75, 14);
 		frame.getContentPane().add(lblSGST);
 		
 		JLabel lblCGST = new JLabel("");
-		lblCGST.setBounds(899, 364, 46, 14);
+		lblCGST.setBounds(899, 410, 75, 14);
 		frame.getContentPane().add(lblCGST);
 		
 		JLabel lblCost = new JLabel("");
-		lblCost.setBounds(899, 392, 46, 14);
+		lblCost.setBounds(899, 431, 75, 23);
 		frame.getContentPane().add(lblCost);
 		
 		JCheckBox chckbxManchuria = new JCheckBox("Manchuria");
@@ -435,7 +435,7 @@ public class MCO {
 				
 			}
 		});
-		btnNewButton.setBounds(885, 19, 89, 23);
+		btnNewButton.setBounds(885, 85, 97, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Total");
@@ -469,7 +469,7 @@ public class MCO {
 				lblCost.setText(T);                  
 			}
 		});
-		btnNewButton_1.setBounds(768, 388, 89, 23);
+		btnNewButton_1.setBounds(718, 431, 89, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("Manager :");
@@ -500,16 +500,39 @@ public class MCO {
 				p.setVisible(true);
 			}
 		});
-		btnNewButton_2.setBounds(885, 56, 89, 23);
+		btnNewButton_2.setBounds(885, 56, 97, 23);
 		frame.getContentPane().add(btnNewButton_2);
 		
 		JLabel lblNewLabel_5 = new JLabel("SGST-9%");
-		lblNewLabel_5.setBounds(768, 339, 46, 14);
+		lblNewLabel_5.setBounds(817, 385, 53, 23);
 		frame.getContentPane().add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_6 = new JLabel("CGST-9%");
-		lblNewLabel_6.setBounds(768, 364, 53, 14);
+		lblNewLabel_6.setBounds(817, 405, 72, 23);
 		frame.getContentPane().add(lblNewLabel_6);
+		
+		JButton btnNewButton_3 = new JButton("Go Back");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				MC p= new MC();
+				p.setVisible(true);
+				
+			}
+		});
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_3.setBounds(885, 28, 97, 23);
+		frame.getContentPane().add(btnNewButton_3);
+		
+		JLabel lblNewLabel_7 = new JLabel("Tax :");
+		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_7.setBounds(743, 389, 46, 14);
+		frame.getContentPane().add(lblNewLabel_7);
+		
+		JLabel lblNewLabel_8 = new JLabel("BILL");
+		lblNewLabel_8.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_8.setBounds(864, 355, 46, 14);
+		frame.getContentPane().add(lblNewLabel_8);
 		
 		
 		

@@ -44,12 +44,13 @@ public class choo extends JFrame {
 	 * Create the frame.
 	 */
 	public choo() {
-		getContentPane().setBackground(new Color(135, 206, 250));
+		getContentPane().setBackground(Color.LIGHT_GRAY);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 550, 300);
 		getContentPane().setLayout(null);
 		
 		JButton btnNewButton = new JButton("INDIAN");
+		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setBackground(new Color(230, 230, 250));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -129,6 +130,18 @@ public class choo extends JFrame {
 		});
 		btnNewButton_4.setBounds(198, 134, 124, 23);
 		getContentPane().add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("Go Back");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PreMain Table1= new PreMain();
+				Table1.setVisible(true);
+				close();
+			}
+		});
+		btnNewButton_5.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_5.setBounds(445, 238, 89, 23);
+		getContentPane().add(btnNewButton_5);
 	}
 
 }

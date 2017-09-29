@@ -10,7 +10,9 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JLabel;
+
 import java.awt.Font;
 
 public class ChineseTable extends JFrame {
@@ -73,7 +75,7 @@ public class ChineseTable extends JFrame {
 				
 			}
 		});
-		btnNewButton_1.setBounds(22, 193, 89, 23);
+		btnNewButton_1.setBounds(131, 119, 113, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Table 7");
@@ -86,7 +88,7 @@ public class ChineseTable extends JFrame {
 				
 			}
 		});
-		btnNewButton_2.setBounds(283, 59, 89, 23);
+		btnNewButton_2.setBounds(74, 88, 101, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Table9");
@@ -98,7 +100,7 @@ public class ChineseTable extends JFrame {
 				 close();
 			}
 		});
-		btnNewButton_3.setBounds(283, 193, 89, 23);
+		btnNewButton_3.setBounds(197, 153, 131, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Table 10");
@@ -111,7 +113,7 @@ public class ChineseTable extends JFrame {
 				
 			}
 		});
-		btnNewButton_4.setBounds(125, 108, 157, 52);
+		btnNewButton_4.setBounds(251, 187, 141, 23);
 		contentPane.add(btnNewButton_4);
 		
 		JLabel lblNewLabel = new JLabel("Choose a table");
@@ -123,6 +125,18 @@ public class ChineseTable extends JFrame {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_1.setBounds(261, 6, 163, 23);
 		contentPane.add(lblNewLabel_1);
+		
+		JButton btnNewButton_5 = new JButton("Go Back");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				choo Table1= new choo();
+				Table1.setVisible(true);
+				close();
+			}
+		});
+		btnNewButton_5.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_5.setBounds(345, 238, 89, 23);
+		contentPane.add(btnNewButton_5);
 	}
 
 }

@@ -32,7 +32,11 @@ public class MC extends JFrame {
 			}
 		});
 	}
-
+	public void close()
+	{
+		this.setVisible(false);
+		this.dispose();
+	}
 	/**
 	 * Create the frame.
 	 */
@@ -49,9 +53,10 @@ public class MC extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				MCO nw4 =new MCO("Chini","Bhanu");                                         //
 				 nw4.NewScreen4();      
+				 close();
 			}
 		});
-		btnNewButton.setBounds(10, 54, 89, 23);
+		btnNewButton.setBounds(21, 58, 89, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Table22");
@@ -60,9 +65,10 @@ public class MC extends JFrame {
 				MCO nw4 =new MCO("Kutti","Batti");                                         //
 				                                         //
 				 nw4.NewScreen4();  
+				 close();
 			}
 		});
-		btnNewButton_1.setBounds(96, 88, 89, 23);
+		btnNewButton_1.setBounds(52, 88, 122, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Table23");
@@ -70,9 +76,10 @@ public class MC extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				MCO nw4 =new MCO("Kathal","Sri");                                         //
 				 nw4.NewScreen4();  
+				 close();
 			}
 		});
-		btnNewButton_2.setBounds(190, 116, 89, 23);
+		btnNewButton_2.setBounds(130, 115, 138, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Table24");
@@ -80,9 +87,10 @@ public class MC extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				MCO nw4 =new MCO("Chat","Bhani");                                         //
 				 nw4.NewScreen4();  
+				 close();
 			}
 		});
-		btnNewButton_3.setBounds(283, 148, 89, 23);
+		btnNewButton_3.setBounds(202, 149, 147, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Table25");
@@ -90,9 +98,10 @@ public class MC extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				MCO nw4 =new MCO("Arzi","Farak");                                         //
 				 nw4.NewScreen4();  
+				 close();
 			}
 		});
-		btnNewButton_4.setBounds(371, 182, 89, 23);
+		btnNewButton_4.setBounds(283, 183, 155, 23);
 		contentPane.add(btnNewButton_4);
 		
 		JLabel lblNewLabel = new JLabel("Choose a table");
@@ -104,6 +113,18 @@ public class MC extends JFrame {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_1.setBounds(283, 11, 177, 23);
 		contentPane.add(lblNewLabel_1);
+		
+		JButton btnNewButton_5 = new JButton("Go Back");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				choo Table1= new choo();
+				Table1.setVisible(true);
+				close();
+			}
+		});
+		btnNewButton_5.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_5.setBounds(395, 238, 89, 23);
+		contentPane.add(btnNewButton_5);
 	}
 
 }

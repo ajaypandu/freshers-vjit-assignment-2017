@@ -78,7 +78,7 @@ public class LoginScreen {
 				
 				String UName=textUserName.getText();
 				String Pass=password.getText();
-				if(UName.contains("a")&&Pass.contains("b"))
+				if(UName.contains("admin")&&Pass.contains("rubicon"))
 				{
 					textUserName.setText(null);
 					password.setText(null);

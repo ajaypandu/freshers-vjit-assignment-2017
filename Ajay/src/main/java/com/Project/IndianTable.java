@@ -10,7 +10,9 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JLabel;
+
 import java.awt.Font;
 
 public class IndianTable extends JFrame {
@@ -65,7 +67,7 @@ public class IndianTable extends JFrame {
 				 close();//
 							}
 		});
-		btnTable.setBounds(33, 54, 89, 23);
+		btnTable.setBounds(33, 54, 102, 23);
 		contentPane.add(btnTable);
 		
 		JButton btnTable_1 = new JButton("Table2");
@@ -77,7 +79,7 @@ public class IndianTable extends JFrame {
 				 close();//
 			}
 		});
-		btnTable_1.setBounds(33, 227, 89, 23);
+		btnTable_1.setBounds(72, 88, 132, 23);
 		contentPane.add(btnTable_1);
 		
 		JButton btnTable_2 = new JButton("Table3");
@@ -89,7 +91,7 @@ public class IndianTable extends JFrame {
 				 close();//
 			}
 		});
-		btnTable_2.setBounds(368, 54, 89, 23);
+		btnTable_2.setBounds(144, 122, 151, 23);
 		contentPane.add(btnTable_2);
 		
 		JButton btnTable_3 = new JButton("Table4");
@@ -101,7 +103,7 @@ public class IndianTable extends JFrame {
 				 close();//
 			}
 		});
-		btnTable_3.setBounds(368, 227, 89, 23);
+		btnTable_3.setBounds(211, 149, 167, 23);
 		contentPane.add(btnTable_3);
 		
 		JButton btnNewButton = new JButton("Table5");
@@ -113,7 +115,7 @@ public class IndianTable extends JFrame {
 				 close();//
 			}
 		});
-		btnNewButton.setBounds(166, 114, 157, 67);
+		btnNewButton.setBounds(287, 183, 177, 23);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblChooseTheTable = new JLabel("Choose a table");
@@ -125,6 +127,19 @@ public class IndianTable extends JFrame {
 		lblExecutiveChef.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblExecutiveChef.setBounds(307, 11, 167, 14);
 		contentPane.add(lblExecutiveChef);
+		
+		JButton btnNewButton_1 = new JButton("Go Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				choo Table1= new choo();
+				Table1.setVisible(true);
+				close();
+				
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_1.setBounds(395, 238, 89, 23);
+		contentPane.add(btnNewButton_1);
 	}
 
 }
